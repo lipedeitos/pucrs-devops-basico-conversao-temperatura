@@ -22,6 +22,16 @@ jobs:
           npm install -g mocha;
           npm install;
 
-      - name: Execução do test
+      - name: Execução do teste
         run: mocha src/test/convert.js
+
+      - name: Construção da imagem docker
+        uses: docker/build-push-action@v5.3.0
+        with:
+          context: src
+          file: src/DockerFile
+          push: true
+          tags: |
+            felipedeitos/devops-basico-conversao-temperatura:v1
+            felipedeitos/devops-basico-conversao-temperatura:latest
     
