@@ -38,6 +38,6 @@ jobs:
           file: src/DockerFile
           push: true
           tags: |
-            felipedeitos/devops-basico-conversao-temperatura:v1
+            felipedeitos/devops-basico-conversao-temperatura:${{github.run_number}}
             felipedeitos/devops-basico-conversao-temperatura:latest
     
